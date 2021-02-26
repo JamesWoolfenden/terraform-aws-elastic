@@ -40,39 +40,37 @@ No requirements.
 |------|---------|
 | aws | n/a |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) |
+| [aws_cloudwatch_log_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) |
+| [aws_elasticsearch_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticsearch_domain) |
+| [aws_iam_service_linked_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_service_linked_role) |
+| [aws_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) |
+| [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| container | n/a | `string` | `"{
-  \"command\":[\"echo\",\"'hello world'\"],
-  \"environment\": [],
-  \"image\": \"busybox\",
-  \"memory\": 2000,
-  \"mountPoints\": [] ,
-  \"resourceRequirements\" : [],
-  \"ulimits\": [] ,
-  \"vcpus\": 2 ,
-  \"volumes\": []
-}
-"` | no |
-| instance\_role | n/a | `string` | `"arn:aws:iam::680235478471:instance-profile/ecsInstanceRole"` | no |
-| job\_name | n/a | `string` | `"first-run-job-definition"` | no |
-| job\_type | n/a | `string` | `"container"` | no |
-| queue | n/a | `map(any)` | <pre>{<br>  "name": "first-run-job-queue-2",<br>  "priority": 1,<br>  "state": "ENABLED"<br>}</pre> | no |
-| security\_group\_ids | n/a | `list(any)` | <pre>[<br>  "sg-05749b21616ab0cdc"<br>]</pre> | no |
-| service\_role | n/a | `string` | `"arn:aws:iam::680235478471:role/service-role/AWSBatchServiceRole"` | no |
-| subnets | n/a | `list(any)` | <pre>[<br>  "subnet-05808ec64faaa18ba"<br>]</pre> | no |
+| common\_tags | n/a | `map(any)` | n/a | yes |
+| es\_domain | ElasticSearch domain name | `string` | `"elastic"` | no |
+| subnets | List of VPC Subnet IDs to create ElasticSearch Endpoints in | `list(string)` | n/a | yes |
+| vpc | VPC ID where to launch ElasticSearch cluster | `any` | n/a | yes |
+| vpc\_cidr | CIDR to allow connections to ElasticSearch | `string` | `"10.0.0.0/16"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| definition | n/a |
-| environment | n/a |
-| queue | n/a |
-
+| ElasticSearch\_Endpoint | n/a |
+| ElasticSearch\_Kibana\_Endpoint | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
