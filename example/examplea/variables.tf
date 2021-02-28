@@ -6,3 +6,7 @@ variable "common_tags" {
 variable "subnets" {
   type = list(any)
 }
+
+variable "log_name" {
+  default = "elasticsearch"
+}

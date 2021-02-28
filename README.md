@@ -27,8 +27,6 @@ module "elastic" {
 }
 ```
 
-The example in the **examplea** folder shows how to pass your own policy in when creating your key.
-
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
@@ -51,6 +49,7 @@ No Modules.
 | [aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) |
 | [aws_cloudwatch_log_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) |
 | [aws_elasticsearch_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticsearch_domain) |
+| [aws_elasticsearch_domain_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticsearch_domain_policy) |
 | [aws_iam_service_linked_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_service_linked_role) |
 | [aws_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) |
 | [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) |
@@ -59,8 +58,22 @@ No Modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| advanced\_security\_options | n/a | `bool` | `false` | no |
 | common\_tags | n/a | `map(any)` | n/a | yes |
+| dedicated\_master\_count | n/a | `number` | `1` | no |
+| dedicated\_master\_enabled | n/a | `bool` | `true` | no |
+| dedicated\_master\_type | n/a | `string` | `""` | no |
+| ebs\_volume\_size | Optionally use EBS volumes for data storage by specifying volume size in GB (default 0) | `number` | `0` | no |
+| ebs\_volume\_type | Storage type of EBS volumes, if used (default gp2) | `string` | `"gp2"` | no |
 | es\_domain | ElasticSearch domain name | `string` | `"elastic"` | no |
+| es\_version | n/a | `string` | `7.1` | no |
+| es\_zone\_awareness | n/a | `bool` | `true` | no |
+| instance\_count | n/a | `number` | `1` | no |
+| instance\_type | n/a | `string` | `""` | no |
+| kms\_key\_id | n/a | `string` | `"aws/es"` | no |
+| log\_name | n/a | `string` | `"elasticsearch"` | no |
+| retention | n/a | `number` | `90` | no |
+| snapshot\_start\_hour | n/a | `string` | `"23"` | no |
 | subnets | List of VPC Subnet IDs to create ElasticSearch Endpoints in | `list(string)` | n/a | yes |
 | vpc | VPC ID where to launch ElasticSearch cluster | `any` | n/a | yes |
 | vpc\_cidr | CIDR to allow connections to ElasticSearch | `string` | `"10.0.0.0/16"` | no |
@@ -69,8 +82,7 @@ No Modules.
 
 | Name | Description |
 |------|-------------|
-| ElasticSearch\_Endpoint | n/a |
-| ElasticSearch\_Kibana\_Endpoint | n/a |
+| elasticsearch | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
