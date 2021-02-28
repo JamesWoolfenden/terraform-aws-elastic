@@ -9,7 +9,7 @@
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-elastic/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-elastic&benchmark=INFRASTRUCTURE+SECURITY)
 
-Terraform module -
+Terraform module - to provision an Elasticsearch cluster.
 
 ---
 
