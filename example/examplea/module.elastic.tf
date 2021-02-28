@@ -1,10 +1,10 @@
 module "elastic" {
-  source      = "../../"
-  common_tags = var.common_tags
-  subnets     = var.subnets
-  vpc         = "vpc-510efa34"
-  kms_key_id  = aws_kms_key.elastic.id
-  log_name    = var.log_name
+  source        = "../../"
+  common_tags   = var.common_tags
+  subnets       = var.subnets
+  vpc           = "vpc-510efa34"
+  cw_kms_key_id = aws_kms_key.elastic.id
+  log_name      = var.log_name
 }
 
 

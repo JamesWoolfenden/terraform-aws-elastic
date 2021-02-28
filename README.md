@@ -23,6 +23,10 @@ Include this repository as a module in your existing Terraform code:
 module "elastic" {
   source      = "JamesWoolfenden/elastic/aws"
   version     = "0.0.2"
+  subnets     = var.subnets
+  vpc         = <your vpc>
+  kms_key_id  = aws_kms_key.elastic.id
+  log_name    = var.log_name
   common_tags = var.common_tags
 }
 ```
@@ -60,6 +64,7 @@ No Modules.
 |------|-------------|------|---------|:--------:|
 | advanced\_security\_options | n/a | `bool` | `false` | no |
 | common\_tags | n/a | `map(any)` | n/a | yes |
+| cw\_kms\_key\_id | n/a | `any` | n/a | yes |
 | dedicated\_master\_count | n/a | `number` | `1` | no |
 | dedicated\_master\_enabled | n/a | `bool` | `true` | no |
 | dedicated\_master\_type | n/a | `string` | `""` | no |
