@@ -30,8 +30,7 @@ role_arn - (Required) ARN of the IAM role that has the AmazonESCognitoAccess pol
 
   log_publishing_options {
     cloudwatch_log_group_arn = aws_cloudwatch_log_group.examplea.arn
-    log_type                 = "INDEX_SLOW_LOGS"
-    //log_type - (Required) A type of Elasticsearch log. Valid values: INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS
+    log_type                 = var.log_publishing_options_type
   }
 
   domain_endpoint_options {
@@ -88,4 +87,12 @@ role_arn - (Required) ARN of the IAM role that has the AmazonESCognitoAccess pol
   depends_on = [aws_iam_service_linked_role.examplea]
 
   tags = var.common_tags
+}
+
+variable "log_publishing_options_type" {
+  default = "INDEX_SLOW_LOGS"
+  validation {
+    condition     = can(regex("INDEX_SLOW_LOGS|SEARCH_SLOW_LOGS|ES_APPLICATION_LOGS|AUDIT_LOGS", var.log_publishing_options_type))
+    error_message = "A type of Elasticsearch log. Valid values: INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS."
+  }
 }

@@ -1,5 +1,9 @@
 variable "vpc" {
   description = "VPC ID where to launch ElasticSearch cluster"
+  validation {
+    condition     = can(regex("^vpc-", var.vpc))
+    error_message = "Valid vpc_id start with vpc."
+  }
 }
 
 variable "vpc_cidr" {
@@ -16,6 +20,7 @@ variable "subnets" {
   type        = list(string)
   description = "List of VPC Subnet IDs to create ElasticSearch Endpoints in"
 }
+
 variable "ebs_volume_size" {
   description = "Optionally use EBS volumes for data storage by specifying volume size in GB (default 0)"
   default     = 0
@@ -23,8 +28,9 @@ variable "ebs_volume_size" {
 
 variable "ebs_volume_type" {
   description = "Storage type of EBS volumes, if used (default gp2)"
-  default     = "gp2"
+  default     = "gp3"
 }
+
 variable "common_tags" {
   type = map(any)
 }
@@ -54,7 +60,7 @@ variable "es_zone_awareness" {
 }
 
 variable "dedicated_master_type" {
-  default = ""
+  default = "t2.medium.elasticsearch"
 }
 
 variable "dedicated_master_count" {

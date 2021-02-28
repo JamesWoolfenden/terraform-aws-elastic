@@ -67,9 +67,9 @@ No Modules.
 | cw\_kms\_key\_id | n/a | `any` | n/a | yes |
 | dedicated\_master\_count | n/a | `number` | `1` | no |
 | dedicated\_master\_enabled | n/a | `bool` | `true` | no |
-| dedicated\_master\_type | n/a | `string` | `""` | no |
+| dedicated\_master\_type | n/a | `string` | `"t2.medium.elasticsearch"` | no |
 | ebs\_volume\_size | Optionally use EBS volumes for data storage by specifying volume size in GB (default 0) | `number` | `0` | no |
-| ebs\_volume\_type | Storage type of EBS volumes, if used (default gp2) | `string` | `"gp2"` | no |
+| ebs\_volume\_type | Storage type of EBS volumes, if used (default gp2) | `string` | `"gp3"` | no |
 | es\_domain | ElasticSearch domain name | `string` | `"elastic"` | no |
 | es\_version | n/a | `string` | `7.1` | no |
 | es\_zone\_awareness | n/a | `bool` | `true` | no |
@@ -77,6 +77,7 @@ No Modules.
 | instance\_type | n/a | `string` | `""` | no |
 | kms\_key\_id | n/a | `string` | `"aws/es"` | no |
 | log\_name | n/a | `string` | `"elasticsearch"` | no |
+| log\_publishing\_options\_type | n/a | `string` | `"INDEX_SLOW_LOGS"` | no |
 | retention | n/a | `number` | `90` | no |
 | snapshot\_start\_hour | n/a | `string` | `"23"` | no |
 | subnets | List of VPC Subnet IDs to create ElasticSearch Endpoints in | `list(string)` | n/a | yes |
