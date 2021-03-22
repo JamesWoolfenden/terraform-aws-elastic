@@ -4,14 +4,15 @@ name: Verify and Bump
 on:
   schedule:
     - cron: "00 7 * * SUN"
+  workflow_dispatch:
   push:
     branches:
-      - main
+      - master
 env:
   terraform: 0.14.8
   terraform-docs: 0.11.2
   tf_target_dir: example/examplea
-  branch: main
+  branch: master
 jobs:
   terraform:
     runs-on: ubuntu-latest
