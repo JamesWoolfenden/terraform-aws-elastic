@@ -40,55 +40,55 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) |
-| [aws_cloudwatch_log_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) |
-| [aws_elasticsearch_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticsearch_domain) |
-| [aws_elasticsearch_domain_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticsearch_domain_policy) |
-| [aws_iam_service_linked_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_service_linked_role) |
-| [aws_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) |
-| [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) |
+| Name | Type |
+|------|------|
+| [aws_cloudwatch_log_group.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
+| [aws_elasticsearch_domain.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticsearch_domain) | resource |
+| [aws_elasticsearch_domain_policy.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticsearch_domain_policy) | resource |
+| [aws_iam_service_linked_role.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_service_linked_role) | resource |
+| [aws_security_group.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| advanced\_security\_options | n/a | `bool` | `false` | no |
-| common\_tags | n/a | `map(any)` | n/a | yes |
-| cw\_kms\_key\_id | n/a | `any` | n/a | yes |
-| dedicated\_master\_count | n/a | `number` | `1` | no |
-| dedicated\_master\_enabled | n/a | `bool` | `true` | no |
-| dedicated\_master\_type | n/a | `string` | `"t2.medium.elasticsearch"` | no |
-| ebs\_volume\_size | Optionally use EBS volumes for data storage by specifying volume size in GB (default 0) | `number` | `0` | no |
-| ebs\_volume\_type | Storage type of EBS volumes, if used (default gp2) | `string` | `"gp3"` | no |
-| es\_domain | ElasticSearch domain name | `string` | `"elastic"` | no |
-| es\_version | n/a | `string` | `7.1` | no |
-| es\_zone\_awareness | n/a | `bool` | `true` | no |
-| instance\_count | n/a | `number` | `1` | no |
-| instance\_type | n/a | `string` | `""` | no |
-| kms\_key\_id | n/a | `string` | `"aws/es"` | no |
-| log\_name | n/a | `string` | `"elasticsearch"` | no |
-| log\_publishing\_options\_type | n/a | `string` | `"INDEX_SLOW_LOGS"` | no |
-| retention | n/a | `number` | `90` | no |
-| snapshot\_start\_hour | n/a | `string` | `"23"` | no |
-| subnets | List of VPC Subnet IDs to create ElasticSearch Endpoints in | `list(string)` | n/a | yes |
-| vpc | VPC ID where to launch ElasticSearch cluster | `any` | n/a | yes |
-| vpc\_cidr | CIDR to allow connections to ElasticSearch | `string` | `"10.0.0.0/16"` | no |
+| <a name="input_advanced_security_options"></a> [advanced\_security\_options](#input\_advanced\_security\_options) | n/a | `bool` | `false` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | n/a | `map(any)` | n/a | yes |
+| <a name="input_cw_kms_key_id"></a> [cw\_kms\_key\_id](#input\_cw\_kms\_key\_id) | n/a | `any` | n/a | yes |
+| <a name="input_dedicated_master_count"></a> [dedicated\_master\_count](#input\_dedicated\_master\_count) | n/a | `number` | `1` | no |
+| <a name="input_dedicated_master_enabled"></a> [dedicated\_master\_enabled](#input\_dedicated\_master\_enabled) | n/a | `bool` | `true` | no |
+| <a name="input_dedicated_master_type"></a> [dedicated\_master\_type](#input\_dedicated\_master\_type) | n/a | `string` | `"t2.medium.elasticsearch"` | no |
+| <a name="input_ebs_volume_size"></a> [ebs\_volume\_size](#input\_ebs\_volume\_size) | Optionally use EBS volumes for data storage by specifying volume size in GB (default 0) | `number` | `0` | no |
+| <a name="input_ebs_volume_type"></a> [ebs\_volume\_type](#input\_ebs\_volume\_type) | Storage type of EBS volumes, if used (default gp2) | `string` | `"gp3"` | no |
+| <a name="input_es_domain"></a> [es\_domain](#input\_es\_domain) | ElasticSearch domain name | `string` | `"elastic"` | no |
+| <a name="input_es_version"></a> [es\_version](#input\_es\_version) | n/a | `string` | `7.1` | no |
+| <a name="input_es_zone_awareness"></a> [es\_zone\_awareness](#input\_es\_zone\_awareness) | n/a | `bool` | `true` | no |
+| <a name="input_instance_count"></a> [instance\_count](#input\_instance\_count) | n/a | `number` | `1` | no |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | n/a | `string` | `""` | no |
+| <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | n/a | `string` | `"aws/es"` | no |
+| <a name="input_log_name"></a> [log\_name](#input\_log\_name) | n/a | `string` | `"elasticsearch"` | no |
+| <a name="input_log_publishing_options_type"></a> [log\_publishing\_options\_type](#input\_log\_publishing\_options\_type) | n/a | `string` | `"INDEX_SLOW_LOGS"` | no |
+| <a name="input_retention"></a> [retention](#input\_retention) | n/a | `number` | `90` | no |
+| <a name="input_snapshot_start_hour"></a> [snapshot\_start\_hour](#input\_snapshot\_start\_hour) | n/a | `string` | `"23"` | no |
+| <a name="input_subnets"></a> [subnets](#input\_subnets) | List of VPC Subnet IDs to create ElasticSearch Endpoints in | `list(string)` | n/a | yes |
+| <a name="input_vpc"></a> [vpc](#input\_vpc) | VPC ID where to launch ElasticSearch cluster | `any` | n/a | yes |
+| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | CIDR to allow connections to ElasticSearch | `string` | `"10.0.0.0/16"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| elasticsearch | n/a |
+| <a name="output_elasticsearch"></a> [elasticsearch](#output\_elasticsearch) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
