@@ -90,7 +90,7 @@ role_arn - (Required) ARN of the IAM role that has the AmazonESCognitoAccess pol
 }
 
 variable "log_publishing_options_type" {
-  default = "INDEX_SLOW_LOGS"
+  default = "AUDIT_LOGS"
   validation {
     condition     = can(regex("INDEX_SLOW_LOGS|SEARCH_SLOW_LOGS|ES_APPLICATION_LOGS|AUDIT_LOGS", var.log_publishing_options_type))
     error_message = "A type of Elasticsearch log. Valid values: INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS."

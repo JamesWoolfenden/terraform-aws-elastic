@@ -77,7 +77,7 @@ No modules.
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | n/a | `string` | `""` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | n/a | `string` | `"aws/es"` | no |
 | <a name="input_log_name"></a> [log\_name](#input\_log\_name) | n/a | `string` | `"elasticsearch"` | no |
-| <a name="input_log_publishing_options_type"></a> [log\_publishing\_options\_type](#input\_log\_publishing\_options\_type) | n/a | `string` | `"INDEX_SLOW_LOGS"` | no |
+| <a name="input_log_publishing_options_type"></a> [log\_publishing\_options\_type](#input\_log\_publishing\_options\_type) | n/a | `string` | `"AUDIT_LOGS"` | no |
 | <a name="input_retention"></a> [retention](#input\_retention) | n/a | `number` | `90` | no |
 | <a name="input_snapshot_start_hour"></a> [snapshot\_start\_hour](#input\_snapshot\_start\_hour) | n/a | `string` | `"23"` | no |
 | <a name="input_subnets"></a> [subnets](#input\_subnets) | List of VPC Subnet IDs to create ElasticSearch Endpoints in | `list(string)` | n/a | yes |
