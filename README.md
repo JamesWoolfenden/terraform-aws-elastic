@@ -1,6 +1,6 @@
 # terraform-aws-elastic
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-elastic/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-elastic)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-elastic/workflows/Verify%20and%20Bump/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-elastic)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-elastic.svg)](https://github.com/JamesWoolfenden/terraform-aws-elastic/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-elastic.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-elastic/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
