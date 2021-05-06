@@ -28,7 +28,7 @@ variable "ebs_volume_size" {
 
 variable "ebs_volume_type" {
   description = "Storage type of EBS volumes, if used (default gp2)"
-  default     = "gp3"
+  default     = "gp2"
 }
 
 variable "common_tags" {

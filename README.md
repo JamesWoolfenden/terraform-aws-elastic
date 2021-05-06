@@ -69,7 +69,7 @@ No modules.
 | <a name="input_dedicated_master_enabled"></a> [dedicated\_master\_enabled](#input\_dedicated\_master\_enabled) | n/a | `bool` | `true` | no |
 | <a name="input_dedicated_master_type"></a> [dedicated\_master\_type](#input\_dedicated\_master\_type) | n/a | `string` | `"t2.medium.elasticsearch"` | no |
 | <a name="input_ebs_volume_size"></a> [ebs\_volume\_size](#input\_ebs\_volume\_size) | Optionally use EBS volumes for data storage by specifying volume size in GB (default 0) | `number` | `0` | no |
-| <a name="input_ebs_volume_type"></a> [ebs\_volume\_type](#input\_ebs\_volume\_type) | Storage type of EBS volumes, if used (default gp2) | `string` | `"gp3"` | no |
+| <a name="input_ebs_volume_type"></a> [ebs\_volume\_type](#input\_ebs\_volume\_type) | Storage type of EBS volumes, if used (default gp2) | `string` | `"gp2"` | no |
 | <a name="input_es_domain"></a> [es\_domain](#input\_es\_domain) | ElasticSearch domain name | `string` | `"elastic"` | no |
 | <a name="input_es_version"></a> [es\_version](#input\_es\_version) | n/a | `string` | `7.1` | no |
 | <a name="input_es_zone_awareness"></a> [es\_zone\_awareness](#input\_es\_zone\_awareness) | n/a | `bool` | `true` | no |
