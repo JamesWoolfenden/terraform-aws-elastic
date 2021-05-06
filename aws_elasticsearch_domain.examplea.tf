@@ -80,6 +80,7 @@ role_arn - (Required) ARN of the IAM role that has the AmazonESCognitoAccess pol
     kms_key_id = var.kms_key_id
   }
 
+  //add check
   node_to_node_encryption {
     enabled = true
   }
