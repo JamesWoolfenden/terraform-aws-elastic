@@ -66,7 +66,7 @@ jobs:
       - name: install terrascan
         run: |
           pip3 install lastversion
-          lastversion accurics/terrascan --assets -d
+          lastversion accurics/terrascan --assets -d --verbose
           tar -xvf terrascan*.tar.gz
       - name: run terrascan
         run: ./terrascan scan -d  ${{ env.tf_target_dir }} -o json -x json | tee terrascan.json
