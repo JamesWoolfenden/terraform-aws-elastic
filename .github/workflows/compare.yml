@@ -69,7 +69,7 @@ jobs:
           lastversion accurics/terrascan --assets -d 
           tar -xvf terrascan*.tar.gz
       - name: run terrascan
-        run: ./terrascan scan -d  ${{ env.tf_target_dir }} -o json -x json > terrascan.json
+        run: ./terrascan scan -d  ${{ env.tf_target_dir }} -o json -x json | tee terrascan.json
         continue-on-error: true
       - name: store
         uses: actions/upload-artifact@v2
