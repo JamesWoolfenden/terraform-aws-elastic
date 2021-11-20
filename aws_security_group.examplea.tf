@@ -4,9 +4,10 @@ resource "aws_security_group" "examplea" {
   vpc_id      = var.vpc
 
   ingress {
-    from_port = 0
-    to_port   = 0
-    protocol  = "-1"
+    description = "Allow outbound"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = [
       var.vpc_cidr
     ]
