@@ -4,6 +4,7 @@ resource "aws_cloudwatch_log_group" "examplea" {
   kms_key_id        = var.kms_key_id
   tags              = var.common_tags
 }
+
 variable "cw_kms_key_id" {
 
 }
