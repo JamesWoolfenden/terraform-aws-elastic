@@ -1,4 +1,3 @@
-
 resource "aws_elasticsearch_domain" "examplea" {
   domain_name           = var.es_domain
   elasticsearch_version = var.es_version
@@ -89,7 +88,6 @@ role_arn - (Required) ARN of the IAM role that has the AmazonESCognitoAccess pol
 
   tags = var.common_tags
 }
-
 variable "log_publishing_options_type" {
   default = "AUDIT_LOGS"
   validation {

@@ -1,4 +1,3 @@
-
 resource "aws_kms_key" "elastic" {
   enable_key_rotation = true
   policy              = <<POLICY
