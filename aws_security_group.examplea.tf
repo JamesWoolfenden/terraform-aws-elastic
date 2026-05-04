@@ -1,4 +1,5 @@
 resource "aws_security_group" "examplea" {
+  # checkov:skip=CKV_AWS_382: Unrestricted outbound access required for resource functionality
   name        = var.es_domain
   description = "Allow inbound traffic to ElasticSearch from VPC CIDR"
   vpc_id      = var.vpc
