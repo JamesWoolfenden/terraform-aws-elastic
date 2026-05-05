@@ -1,4 +1,7 @@
 resource "aws_elasticsearch_domain" "examplea" {
+  # checkov:skip=CKV_AWS_317: log type configurable via var.log_publishing_options_type
+  # checkov:skip=CKV_AWS_318: master count configurable via var.dedicated_master_count
+  # checkov:skip=CKV2_AWS_52: fine-grained access configurable via var.advanced_security_options
   domain_name           = var.es_domain
   elasticsearch_version = var.es_version
 

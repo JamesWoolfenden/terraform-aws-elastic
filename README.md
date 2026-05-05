@@ -1,8 +1,8 @@
-# terraform-aws-elastic
+# terraform-aws-elasticsearch
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-elastic/workflows/Verify%20and%20Bump/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-elastic)
-[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-elastic.svg)](https://github.com/JamesWoolfenden/terraform-aws-elastic/releases/latest)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-elastic.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-elastic/releases/latest)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-elasticsearch/workflows/Verify/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-elasticsearch)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-elasticsearch.svg)](https://github.com/JamesWoolfenden/terraform-aws-elasticsearch/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-elasticsearch.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-elasticsearch/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-elastic/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-elastic&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
@@ -120,7 +120,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "ec2:RevokeSecurityGroupEgress",
                 "ec2:RevokeSecurityGroupIngress"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor1",
@@ -139,7 +141,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "es:UpdateDomainConfig",
                 "es:UpdateElasticsearchDomainConfig"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor2",
@@ -151,7 +155,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "iam:GetServiceLinkedRoleDeletionStatus",
                 "iam:UpdateRoleDescription"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor3",
@@ -163,12 +169,15 @@ resource "aws_iam_policy" "terraform_pike" {
                 "logs:DeleteRetentionPolicy",
                 "logs:DescribeLogGroups",
                 "logs:DisassociateKmsKey",
+                "logs:ListTagsForResource",
                 "logs:ListTagsLogGroup",
                 "logs:PutRetentionPolicy",
                 "logs:TagLogGroup",
                 "logs:UntagLogGroup"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })
